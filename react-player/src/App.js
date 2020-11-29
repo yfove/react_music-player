@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 // Import Styles
 import "./styles/app.scss";
 //Adding Components
-import Player from './components/Player';
-import Song from './components/Song';
+import Player from "./components/Player";
+import Song from "./components/Song";
+import Library from "./components/Library";
 //Import Util
 import data from "./data";
-
 
 function App() {
   //State
@@ -15,12 +15,15 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   return (
     <div className="App">
-      <Song currentSong={currentSong}/>
-      <Player setIsPlaying={setIsPlaying} isPlaying={isPlaying} currentSong={currentSong}/>
+      <Song currentSong={currentSong} />
+      <Player
+        setIsPlaying={setIsPlaying}
+        isPlaying={isPlaying}
+        currentSong={currentSong}
+      />
+      <Library songs={songs} />
     </div>
   );
-};
+}
 
 export default App;
-
-
